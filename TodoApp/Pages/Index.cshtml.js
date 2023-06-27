@@ -28,7 +28,7 @@
     });
 
     /*** SHOW UPDATE/EDIT POPUP AND UPDATE ITEMS ***/
-    /*$(document).ready(function () {
+    $(document).ready(function () {
         $('#TodoList').on('click', 'li i.fas.fa-pencil-alt', function () {
             var $li = $(this).parent();
             var id = $li.attr('data-id');
@@ -49,36 +49,7 @@
                 abp.notify.info('Updated the todo item.');
             });
         });
-    });*/
-
-    $('#TodoList').on('click', 'li i.fas.fa-pencil-alt', function() {
-    var $li = $(this).parent();
-    var id = $li.attr('data-id');
-    var currentText = $li.text().trim();
-
-    // Pre-fill the edit form with the current text
-    $('#EditText').val(currentText);
-
-    // Show the edit modal
-    $('#editModal').modal('show');
-
-    // Handle the form submission for updating the todo item
-    $('#EditTextForm').off('submit').on('submit', function(e) {
-        e.preventDefault();
-
-        var updatedText = $('#EditText').val();
-
-        todoApp.services.todo.update(updatedText,id).then(function(result) {
-            // Update the todo item text in the list
-            $li.html('<i class="fa fa-trash-o"></i> ' + result.text);
-
-            // Hide the edit modal
-            $('#editModal').modal('hide');
-
-            abp.notify.info('Updated the todo item.');
-        });
     });
-});
 
      /*** SLIDE SHOW ***/
     const slides = document.querySelectorAll('.slide');
@@ -93,7 +64,6 @@
             }
         });
     }
-
     function nextSlide() {
         currentSlide++;
         if (currentSlide >= slides.length) {
@@ -104,7 +74,7 @@
 
     setInterval(nextSlide, 4000);
 
-
+    /*** COLOR CHANGE***/
     const titleElement = document.getElementById('shopping-list-title');
 
     const colors = ['lightgreen', 'lightpink', 'lightgrey', 'lightgoldenrodyellow', 'lightblue'];
