@@ -1,0 +1,95 @@
+﻿@page
+@model TodoApp.Pages.IndexModel
+
+@section styles {
+    <abp-style src="/Pages/Index.cshtml.css" />
+}
+@section scripts {
+    <abp-script src="/Pages/Index.cshtml.js" />
+}
+
+<div class="container">
+    <abp-card>
+        <abp-card-header>
+            <abp-card-title>
+                <h1 class="slide-in">Welcome to our Todo List Web Application</h1>
+            </abp-card-title>
+        </abp-card-header>
+        <abp-card-body>
+            <div class="jumbotron">
+                <p>Experience the power and awesomeness of our web application.</p>
+                <div class="slideshow">
+                    <div class="background"></div>
+                    <div class="overlay"></div>
+                    <div class="slide active">
+                        <h2>ADD</h2>
+                        <img src="/images/todoAdd.png" alt="" />
+                        <p>Add items to your todo list.</p>
+                    </div>
+                    <div class="slide">
+                        <h2>EDIT</h2>
+                        <img src="/images/todoEdit.jpg" alt="" />
+                        <p>Update the items in your todo list.</p>
+                    </div>
+                    <div class="slide">
+                        <h2>DELETE</h2>
+                        <img src="/images/todoDelete.png" alt="" />
+                        <p>Delete items from the list.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>About Us</h2>
+                    <p>We are a grocery todo list app that simplifies your shopping experience. <hr />Manage your tasks efficiently and never forget an item again. Start using our app today and make your grocery trips a breeze!</p>
+                </div>
+                <div id="features" class="col-md-4" style="background-color: lightgrey;color:black;border-radius:15px;">
+                    <h2>Features</h2>
+                    <ul>
+                        <li style="background-color: lightgreen;">Add items to your todo list</li>
+                        <li style="background-color: lightgoldenrodyellow;">Update the items in your todo list</li>
+                        <li style="background-color: lightpink;">Delete items from the list</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h2>Contact</h2>
+                    <ul>
+                        <li style="background-color: linen;">
+                            <i class="fas fa-envelope"></i> nkosingiphilemabo@gmail.com
+                        </li>
+                        <li style="background-color: lightblue;">
+                            <i class="fas fa-phone"></i> Phone: 064-692-4069
+                        </li>
+                        <span>
+                            <div class="social-media-icons">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </span>
+                    </ul>
+                </div>
+
+            </div>
+        </abp-card-body>
+    </abp-card>
+    <footer class="footer">
+        <div class="container">
+            <div class="row" id="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 TodoApp. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

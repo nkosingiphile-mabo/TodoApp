@@ -1,0 +1,69 @@
+﻿@page
+@model TodoApp.Pages.TodoListModel
+
+@section styles {
+    <abp-style src="/Pages/Index.cshtml.css" />
+}
+@section scripts {
+    <abp-script src="/Pages/Index.cshtml.js" />
+}
+
+<div class="container" data-userid="@Model.UserId">
+    <abp-card>
+        <abp-card-header>
+            <abp-card-title>
+                <h3 id="shopping-list-title"><i class="fas fa-tasks"></i> Grocery Shopping List</h3>
+            </abp-card-title>
+        </abp-card-header>
+        <abp-card-body>
+            <!-- FORM FOR NEW TODO ITEMS -->
+            <form id="NewItemForm" class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="col-12">
+                    <div class="input-group">
+                        <input id="NewItemText" type="text" class="form-control" placeholder="Enter grocery item...">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            <!-- TODO ITEMS LIST -->
+            <ul id="TodoList">
+                @foreach (var todoItem in Model.TodoItems)
+                {
+                    <li data-id="@todoItem.Id">
+                        <i class="fa fa-trash-o"></i> <i class="fas fa-pencil-alt" style="color: green;"></i>
+                      @todoItem.Text
+                    </li>
+                }
+            </ul>
+        </abp-card-body>
+    </abp-card>
+</div>
+
+<!-- Popup Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- FORM FOR NEW TODO ITEMS -->
+                <form id="EditTextForm" class="row row-cols-lg-auto g-3 align-items-center">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <input id="EditText" type="text" class="form-control" placeholder="Enter todo task...">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
